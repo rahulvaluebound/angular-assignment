@@ -1,0 +1,26 @@
+<h2 style="text-align: center;">YOUR CART</h2>
+<table id="cart">
+    <thead>
+        <tr>
+            <th colspan="2">TITLE</th>
+            <th>PRICE</th>
+            <th>CATEGORY</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td colspan="2">{{product.title}}</td>
+            <td>&#8377;{{product.price}}</td>
+            <td>{{product.category}}</td>
+            <td>
+                <form (ngSubmit)="onSubmit(product.title)">
+                    <input class="btn-add-cart" type="submit" value="DELETE">
+                </form>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<br><br>
+<a routerLink="/checkout">Checkout</a>

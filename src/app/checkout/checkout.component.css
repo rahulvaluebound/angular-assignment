@@ -1,0 +1,36 @@
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 50%;
+    background-color: rgb(218, 214, 214);
+    color: black;
+    padding: 14px 20px;
+    margin-left: 25%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #aaadaa;
+  }
+  div {
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    margin: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .price{
+    margin: 0;
+  }
+  

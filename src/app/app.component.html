@@ -1,4 +1,10 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+
+<div class="header">
+    <a href="#default" class="logo">ECOMMERCE</a>
+    <div class="header-right">
+      <a routerLink="/cart">Cart({{noOfProductInCart}})</a>
+    </div>
+  </div>
+
+
+<router-outlet></router-outlet>

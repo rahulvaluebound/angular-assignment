@@ -1,0 +1,15 @@
+<h1 style="margin-left: 40%;">PRODUCTS</h1>
+<br><br>
+
+<div class="tab1cards">
+    <div *ngFor="let product of products">
+        <a [routerLink]="['/product',product.id]">
+            <div class="card">
+                <img src="{{product.image}}" height="300px" width="200px">
+                <h4 style="text-align:left; color: #0056BA;"><b>{{product.title}}</b></h4>
+                <p style="text-align:left; color: black;">Price : &#8377; {{product.price}}
+                <p>
+            </div>
+        </a>
+    </div>
+</div>

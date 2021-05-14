@@ -1,0 +1,26 @@
+<div *ngIf="details">
+<form (ngSubmit)="onSubmit()">
+    <label for="name">Your Name :</label>
+    <input #name [(ngModel)]="details.name" type="text" name="name" id="name">
+    <span *ngIf="!name || !name.value" style="color: red;">Name Required</span><br>
+    <label for="address">Your Address :</label>
+    <input #address [(ngModel)]="details.address" type="text" name="address" id="address">
+    <span *ngIf="!address || !address.value" style="color: red;">Address Required</span><br>
+    <label for="contact">Your contact number :</label>
+    <input #contact [(ngModel)]="details.contact" type="text" name="contact" id="contact">
+    <span *ngIf="!contact || !contact.value" style="color: red;">Contact Number Required</span><br>
+    <input [(ngModel)]="totalPrice" type="hidden" name="totalPrice">
+    <label for="deliveryType">Choose Delivery way(Standard or Faster) </label>
+    
+    <select class="form-control"  id="deliveryType"
+          required
+          [(ngModel)]="details.deliveryType" name="deliveryType">
+    <option *ngFor="let dt of deliveryType" [value]="dt">{{dt}}</option>
+  </select>
+  <p style="font-size: smaller; margin: 0;">*Extra charges will apply on faster delivery</p>  
+  <input type="submit" value="Place Order">
+    <div class="price" *ngIf="details.deliveryType == 'standard'; else elseBlock">Total Price :  &#8377;{{totalPrice}}</div>
+    <ng-template #elseBlock><div class="price"> Changed Price For faster delivery : &#8377;{{totalPrice+10}} </div></ng-template>
+</form>
+
+</div>

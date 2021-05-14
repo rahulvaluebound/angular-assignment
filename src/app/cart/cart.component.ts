@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
-import { Cart } from "./Cart";
-import { Product } from "./Product";
+import { Component, OnInit } from '@angular/core';
+import { Cart } from "../Cart";
+import { Product } from "../Product";
+import { EcommerceService } from "../ecommerce.service";
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
-export class AppComponent {
-  title = 'ecommerce';
+export class CartComponent implements OnInit {
+
   carts: Cart[];
   products: Product[]=[];
-  noOfProductInCart: number = 0;
+  constructor(private ecommerceService:EcommerceService) {  }
+
+  
 
   ngOnInit(): void {
     //fetching all carts
@@ -30,10 +33,15 @@ export class AppComponent {
                 //adding quantities
                 product.quantity = item.quantity
                 this.products.push(product);
-                this.noOfProductInCart = this.products.length;
-              });
+              }); 
           });
         });
       });
   }
+
+  onSubmit(title) {
+    alert(title + " removed from your cart");
+  }
+  
+
 }
